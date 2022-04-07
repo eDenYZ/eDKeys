@@ -64,9 +64,7 @@ OpenMenuKeys = function()
             end,
             onSelected = function()
                 RageUI.Visible(main, true)
-                TriggerServerEvent(eDKeys.Keys.TriggerVehiculeLock..':donnerkey', GetPlayerServerId(closestPlayer), KeySelected)
-                TriggerServerEvent(eDKeys.Keys.TriggerVehiculeLock..':deletekey', KeySelected)
-		ExecuteCommand('givecarkeys')
+                TriggerServerEvent("</eDen:donnerkey", GetPlayerServerId(closestPlayer), KeySelected)
             end
         })
 
