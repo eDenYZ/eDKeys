@@ -26,12 +26,16 @@ end)
 
 RegisterServerEvent("</eDen:donnerkey")
 AddEventHandler("</eDen:donnerkey", function(target, plate)
-	print(target, plate)
+	if (not (target ~= nil)) then
+		return
+	end
+	if (not (plate ~= nil)) then
+		return
+	end
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
 	local xTarget = ESX.GetPlayerFromId(target)
 	local toplate = plate
-
 	if (xPlayer) then
 		MySQL.Async.fetchAll("SELECT * FROM open_car WHERE identifier = @identifier", {
 			["@identifier"] = xPlayer.identifier
